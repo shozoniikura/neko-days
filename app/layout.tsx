@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 
 // dummy
 const Header = () => <div className='text-2xl px-2 py-1 bg-blue-600'>Header</div>;
-// const Navigation = () => <div className='text-2xl px-2 py-1 bg-yellow-400'>Navigation</div>;
 const Footer = () => <div className='text-2xl px-2 py-1 bg-red-600'>Footer</div>;
 
 export default function RootLayout({
