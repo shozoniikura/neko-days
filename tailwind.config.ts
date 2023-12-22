@@ -7,6 +7,27 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      body: [
+        'Avenir',
+        'Helvetica Neue',
+        'Helvetica',
+        'Arial',
+        'Hiragino Sans',
+        'ヒラギノ角ゴシック',
+        'メイリオ',
+        'Meiryo',
+        'YuGothic',
+        'Yu Gothic',
+        'ＭＳ Ｐゴシック',
+        'MS PGothic',
+        'sans-serif'
+      ],
+      mono: [
+        'ui-monospace',
+        'SFMono-Regular'
+      ]
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
