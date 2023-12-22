@@ -1,11 +1,12 @@
-import Image from 'next/image'
+import Cards from '@/components/cards';
 
 export default function Home() {
   return (
     <>
-      <main className='flex'>
-        <h2 className='text-3xl'>sample page</h2>
+      <main className=''>
+        <h2 className='text-3xl'>写真集</h2>
+        <Cards />
       </main>
     </>
-  )
+  );
 }
