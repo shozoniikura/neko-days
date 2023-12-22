@@ -1,6 +1,10 @@
 import Card from "./card";
 import { glob } from "glob";
 
+const shuffle = (array: string[]) => {
+  return [].concat(array).sort((a, b) => 0.5 - Math.random());
+};
+
 const getPictures = async() => {
   return await getPicturesNew();
 };
@@ -8,7 +12,8 @@ const getPictures = async() => {
 const getPicturesNew = async() => {
   const pictures = new Array(10);
   const userImgsA = await glob('./public/images/*');
-  const userImgs = userImgsA.map((img: string)=>img.replace(/^public/, ''));
+  const userImgsB = userImgsA.map((img: string)=>img.replace(/^public/, ''));
+  const userImgs = shuffle(userImgsB);
   for (let i=0; i<pictures.length; i++) {
     pictures[i] = userImgs[i % userImgs.length];
   }
