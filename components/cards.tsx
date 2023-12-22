@@ -1,48 +1,24 @@
-import Image from "next/image";
+import Card from "./card";
+
+const getPictures = () => {
+  const pictures = new Array(10);
+  for (let i=0; i<pictures.length; i++) {
+    const w = Math.floor(Math.random() * 40 + 20) * 10;
+    const h = Math.floor(Math.random() * 40 + 20) * 10;
+    pictures[i] = `https://placekitten.com/${w}/${h}`;
+  }
+
+  return pictures;
+}
 
 const Cards = () => {
+  const pictures = getPictures();
   return (
     <div className="flex flex-wrap -mx-4">
 
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/400/400" width={400} height={400} alt="Image 1" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/401/401" width={400} height={400} alt="Image 2" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/402/402" width={400} height={400} alt="Image 3" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/403/403" width={400} height={400} alt="Image 4" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/404/404" width={400} height={400} alt="Image 5" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/405/405" width={400} height={400} alt="Image 6" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/406/406" width={400} height={400} alt="Image 7" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/407/407" width={400} height={400} alt="Image 8" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/408/408" width={400} height={400} alt="Image 9" className="w-full h-auto rounded" />
-      </div>
-
-      <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 mb-4">
-        <Image src="https://placekitten.com/409/409" width={400} height={400} alt="Image 10" className="w-full h-auto rounded" />
-      </div>
+      {pictures.map((pic, idx) => (
+        <Card idx={idx} picture={pic} />
+      ))}
 
     </div>
   );
