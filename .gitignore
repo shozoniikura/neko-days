@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # User Images
-!/public/images/.keep
 /public/images/*
+!/public/images/.keep
