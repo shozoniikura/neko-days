@@ -14,7 +14,7 @@ const getPictures = () => {
 const Cards = () => {
   const pictures = getPictures();
   return (
-    <div className="flex flex-wrap -mx-4">
+    <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
 
       {pictures.map((pic, idx) => (
         <Card idx={idx} picture={pic} />
